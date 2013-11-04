@@ -2,6 +2,21 @@
 // General
 // ------------------------------------------------------------------
 
+body > section#contentWrapper
+	opacity: 0
+	&.active
+		+animate(fadeInUp)
+
+header.active
+	#topMenu
+		+animate(fadeInDown)
+	#searchWrapper
+		+animate(fadeInUp, $delay: 1.5s)
+	#logo
+		+animate(bounceIn)
+	#menu
+		+animate(fadeInUp)
+
 .container
 	+grid-container
 	+clearfix
@@ -22,6 +37,9 @@ body
 				background: $brancoCinza
 				height: 50px
 				
+				.container
+					overflow: visible
+
 				a
 					color: $corTexto
 					font-size: 12px
@@ -29,7 +47,7 @@ body
 					line-height: 50px
 
 				.cidade
-					+grid(2, $gutter-width: 0)
+					+grid(3, $gutter-width: 0)
 					border-right: 1px solid rgba($black, 0.05)
 					margin-right: -1px
 
@@ -37,9 +55,28 @@ body
 						font-size: 22px
 						font-weight: 700
 						display: block
+						position: relative
+						padding: 0 40px 0 20px
+
+						&:after
+							+fontIcon
+							content: "\e624"
+							position: absolute
+							top: 0
+							right: 10px
+							font-size: 20px
+					& > nav
+						background: $brancoCinza
+						+grid(3, $gutter-width: 0)
+						display: none
+						z-index: 99
+						position: absolute
+						a
+							display: block
+							border-top: 1px solid rgba($black, 0.05)
 
 				nav
-					+grid(10, $gutter-width: 0)
+					+grid(9, $gutter-width: 0)
 					a
 						padding: 0 20px
 						display: inline-block
@@ -47,22 +84,360 @@ body
 							background: $corPrincipal
 							color: $corPrincipalInverso
 
+			&#searchWrapper
+				height: 90px
+				padding-top: 20px
+				position: relative
+
+				.topBanner
+					+grid(8)
+					height: 90px
+
+				.lang, .search
+					+grid(4)
+
+				.lang
+					height: 13px
+					text-align: right
+					a
+						display: inline-block
+						margin-right: 10px
+
+						&:not(.active)
+							+grayscale
+							opacity: 0.5
+				.search
+					padding-top: 15px
+					position: relative
+					h1
+						font-size: 20px
+						margin-bottom: 5px
+						
+					input[type="text"]
+						background: $brancoCinza
+						border: none
+						width: 100%
+						margin: 0
+						padding-right: 50px
+
+					input[type="submit"]
+						margin: 0
+						position: absolute
+						bottom: 0
+						right: 0
+						+fontIcon
+						+border-radius(0 5px 5px 0)
+						height: 36px
+						padding: 0 10px
+
 			&#logo
 				padding: 20px 0
 				img
-					width: 100%
+					+grid(12)
 					display: block
-
+			&#menu
+				nav
+					+grid(12)
+					text-align: center
+					a
+						display: inline-block
+						padding: 0 14px
+						font-size: 13px
+						line-height: 30px
+						text-transform: uppercase
+						&:hover
+							background: $brancoCinza
 	& > section
 		width: 100%
 		display: block
 
+	#banner
+		$larguraBanner: 100%
+		$alturaBanner: 500px
 
+		+animate(fadeIn, $delay: 0.5s)
+
+		width: $larguraBanner
+		height: $alturaBanner
+		display: block
+		position: relative
+		margin-top: 20px
+		ul
+			width: $larguraBanner
+			height: $alturaBanner
+			display: block
+			position: relative
+
+			li
+				width: $larguraBanner
+				height: $alturaBanner
+				display: block
+				position: relative
+				background-position: center center
+
+				a
+					position: absolute
+					left: 100px
+					right: 500px
+					bottom: 60px
+					padding: 20px
+					background: rgba($verdeEscuro, 0.9)
+					font-size: 20px
+					color: $branco
+					text-transform: uppercase
+					line-height: 120%
+					+animate(fadeInLeftBig)
+
+					&:hover
+						background: rgba($verde, 1)
+		&.active
+			.accordion
+				+animate(bounceIn)
+
+		#bannerNav
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 20px
+			z-index: 99
+			text-align: center
+			a
+				text-indent: -9999px
+				display: inline-block
+				+border-radius(50%)
+				background: $brancoCinza
+				width: 10px
+				height: 10px
+				margin: 0 10px
+
+				&.activeSlide
+					background: $verde
+					+scale(1.7)
+		.accordion
+			position: absolute
+			width: 360px
+			display: block
+			min-height: 100px
+			top: 50px
+			right: 100px
+			z-index: 99
+			background: $brancoCinza
+			+border-radius(5px)
+			.accord-header
+				cursor: pointer
+				font-size: 16px
+				font-weight: bold
+				padding: 20px
+				text-transform: uppercase
+				&.active
+					background: rgba($black, 0.03)
+					color: $verde
+			.accord-content
+				display: none
+				background: rgba($black, 0.03)
+				
+				form
+					padding: 2px 20px 60px 20px
+					position: relative
+					display: block
+					+clearfix
+
+					select, input
+						display: block
+						width: 100%
+						margin: 0 0 10px 0
+						float: left
+					button
+						position: absolute
+						bottom: 0
+						left: 0
+						right: 0
+						+border-radius(0 0 5px 5px)
+						height: 50px
+						margin: 0
+					.uf
+						width: 70px
+					.cidade
+						width: 115px
+						margin: 0 10px 10px 10px
+					.bairro
+						width: 115px
+
+					.periodo
+						label, input
+							display: block
+							float: left
+
+						label
+							font-size: 17px
+							color: $corTexto
+							width: 80px
+							line-height: 40px
+							font-weight: 400
+
+						input
+							width: 240px
+
+				&.active
+					form
+						+animate(fadeInUp)
+				&.pesquisa
+					display: block
+
+
+	.associe-se
+		width: 100%
+		padding: 35px 0
+		background: $verde
+		color: $brancoCinza
+		font-size: 40px
+		text-transform: uppercase
+		font-weight: 700
+		display: block
+		text-align: center
+		line-height: 40px
+		span
+			font-size: 22px
+			display: block
+			font-weight: 300
+			text-transform: normal
+			+transition
+		&:hover
+			font-size: 30px
+			span
+				font-size: 30px
 
 // ------------------------------------------------------------------
 // Header
 // ------------------------------------------------------------------
 
+body
+	#contentWrapper
+		padding-top: 50px
+		+clearfix
+		#content
+			+grid(8)
+			& > section
+				margin-bottom: 50px
+				display: block
+				+clearfix
+				position: relative
+			.eventos
+				& > a
+					text-transform: uppercase
+					font-size: 16px
+					position: absolute
+					top: 30px
+					right: 0
+					font-weight: 700
+
+				& > div
+					& > a
+						display: block
+						float: left
+						width: 378px
+						height: 248px
+						margin: 0 2px 2px 0
+						position: relative
+						+bgCover
+						
+						.date
+							position: absolute
+							background: rgba($verde, 0.8)
+							font-size: 40px
+							display: block
+							padding: 20px
+							top: 0
+							right: 0
+							color: $brancoCinza
+							text-align: center
+							text-transform: uppercase
+							+transition
+							z-index: 99
+
+							span
+								font-size: 20px
+								display: block
+								margin-top: 5px
+
+
+						.caption
+							position: absolute
+							background: rgba($black, 0.7)
+							padding: 20px 20px 10px 20px
+							bottom: 0
+							left: 0
+							right: 0
+							+clearfix
+							+transition
+
+							h2
+								font-size: 24px
+								font-weight: 100
+								color: $brancoCinza
+								margin-bottom: 10px
+							p
+								color: $brancoCinza
+								+transition
+								display: none
+
+						&:hover
+							.caption p
+								display: block
+								
+							.date
+								background: rgba($verde, 1)
+								+scale(1.4)
+
+						&:nth-of-type(1)
+							height: 498px
+							.caption
+								p
+									display: block
+
+			.palavraPresidente
+				margin-bottom: 30px
+				& > img
+					display: block
+					float: left
+					margin-right: 40px
+					margin-bottom: 20px
+
+			.noticias
+				padding: 20px 30px 40px 30px
+				background: $brancoCinza
+
+				ul
+					li
+						h2
+							font-size: 18px
+							margin-bottom: 10px
+							a
+								text-transform: none
+								font-weight: 700
+								line-height: 120%
+						.breadcrumb
+							background: $branco
+							padding: 5px 10px
+							+border-radius(5px)
+							margin: 10px 0
+							display: block
+
+						display: block
+						padding-bottom: 20px
+				& > a
+					+button3d
+					background: #ece6db
+					position: absolute
+					left: 0
+					bottom: 0
+					right: 0
+					height: 50px
+					line-height: 30px
+					color: $cinzaEscuro
+
+		#sidebar
+			+grid(4)
 
 
 
@@ -76,23 +451,172 @@ body
 // ------------------------------------------------------------------
 // Footer
 // ------------------------------------------------------------------
+body
+	footer
+		background: $brancoCinza
+		padding: 50px 0
+		width: 100%
+		+clearfix
+		display: block
 
+		& > img
+			display: block
+			width: 360px
+			float: none
+			margin: 0 auto
 
-
+		& > ul
+			display: block
+			margin-top: 50px
+			+clearfix
+			li
+				+grid(2)
+				h1
+					font-size: 15px
+					font-weight: 700
+					margin-bottom: 10px
+				a
+					display: block
+					padding: 7px 0
+					font-size: 13px
+					font-weight: 400
+	.direitos
+		width: 100%
+		+clearfix
+		display: block
+		line-height: 60px
+		background: $verde
+		text-align: center
+		text-transform: uppercase
+		font-weight: 700
+		font-size: 10px
+		color: $brancoCinza
 
 // ------------------------------------------------------------------
-// Interna X
+// Sidebar
 // ------------------------------------------------------------------
 
+#sidebar
+	.widget
+		+clearfix
+		display: block
+		margin-bottom: 40px
+		h1
+			padding-bottom: 10px
+			margin-bottom: 0
+		h2
+			font-size: 18px
+			margin-bottom: 20px
+			text-transform: none
+			font-weight: 400
+			color: $verde
+			text-align: center
 
+		&#enquete
+			h2
+				padding: 20px 0
+				border-top: 1px solid $verde
+				border-bottom: 1px solid $verde
+				margin-top: 10px
+			form
+				div
+					display: block
+					padding: 10px
+					padding-left: 50px
+					position: relative
+					min-height: 25px
+					margin: 5px 0
 
+					label
+						cursor: pointer
+						font-size: 16px
+
+					input
+						position: absolute
+						left: 10px
+						top: 10px
+						margin: 0
+					
+					&:hover
+						background: $brancoCinza
+
+				button
+					width: 100%
+					margin-top: 5px
+
+		&#publicidade
+			a
+				margin-bottom: 10px
+				display: block
+
+		&#newsletter
+			form
+				input, button
+					width: 100%
+					margin: 5px 0
+					float: left
+
+		&#contato
+			h2
+				font-weight: 700
+				text-align: left
+				text-transform: uppercase
+				margin-bottom: 5px
+				padding-top: 10px
 
 // ------------------------------------------------------------------
-// 
+// Outros
 // ------------------------------------------------------------------
 
+.daterangepicker
+	display: none
+	+font
+	.calendar
+		+clearfix
+		max-width: none
+		td
+			+font
+			line-height: 22px
+			&.active
+				&, &:hover
+					background: $verde
+
+		thead tr:first-child th
+			font-size: 15px
+			font-weight: 700
+			text-transform: uppercase
+
+		th
+			+font
+			line-height: 30px
+			height: 30px
+			vertical-align: middle
+
+			.icon-arrow-right, .icon-arrow-left
+				background-position: center center
+				background-repeat: no-repeat
+				width: 30px
+				height: 30px
+				display: block
+
+			.icon-arrow-right
+				background-image: url(../img/calendar-next.png)
+			.icon-arrow-left
+				background-image: url(../img/calendar-prev.png)
 
 
+	.ranges
+		width: 190px
+		.btn.btn-small
+			width: 187px
+			display: block
+			margin-bottom: -5px
+			&.btn
+				+button3d
+				font-size: 13px
+				&.cancelBtn
+					background: $cinzaClaro
+					color: $cinzaEscuro
 
 
 

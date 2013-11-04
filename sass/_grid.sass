@@ -16,6 +16,8 @@
 =grid($n, $cols: $ninesixty-columns, $gutter-width: $ninesixty-gutter-width)
   +grid-unit-base($gutter-width)
   +grid-width($n, $cols, $gutter-width)
+  position: relative
+  +box-sizing(border-box)
 
 =alpha
   margin-left: 0
