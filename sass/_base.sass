@@ -1,0 +1,195 @@
+// ------------------------------------------------------------------
+// Defaults do Compass
+// ------------------------------------------------------------------
+$default-transition-property : all
+$default-transition-duration : 0.2s
+$default-transition-function : false
+$default-transition-delay    : false
+
+$default-text-shadow-color: rgba(#000, 0.3)
+$default-text-shadow-h-offset: 1px
+$default-text-shadow-v-offset: 1px
+$default-text-shadow-blur: 1px
+
+$default-box-shadow-color: rgba(#000, 0.3)
+$default-box-shadow-h-offset: 0
+$default-box-shadow-v-offset: 2px
+$default-box-shadow-blur: 4px
+$default-box-shadow-spread: 0
+$default-box-shadow-inset: false
+
+// ------------------------------------------------------------------
+// colors
+// ------------------------------------------------------------------
+
+$branco: #fff
+$preto: #2c2c2c
+
+$verde: #4db6a2
+$verdeEscuro: #2d8b79
+$azul: #3598dc
+$azulEscuro: #1f5983
+$roxo: #9c59b8
+$roxoEscuro: #5a346e
+$amarelo: #f1c40f
+$amareloEscuro: #cfa90f
+$laranja: #f97f15
+$vermelho: #e84c3d
+$vermelhoEscuro: #862c24
+$rosa: #ff2687
+$rosaEscuro: #931650
+$marrom: #402d21
+
+$brancoCinza: #fcfaf7
+$cinzaClaro: #dbdbdb
+$cinza: #919191
+$cinzaEscuro: #414042
+$black: #000
+
+
+
+$corPrincipal: $verde
+$corPrincipalHover: $verdeEscuro
+$corPrincipalInverso: $brancoCinza
+
+
+
+// ------------------------------------------------------------------
+// Scroll css3
+// ------------------------------------------------------------------ 
+
+$corScroll: $corPrincipal
+$corFundoScroll: $corPrincipalInverso
+
+::-webkit-scrollbar 
+	width: 10px
+	height: 0px
+	margin: 0px 0px 0px 0px
+
+
+::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment 
+	display: block
+	height: 0px
+
+
+::-webkit-scrollbar-button:vertical:increment 
+	background-color: none
+
+
+::-webkit-scrollbar-track-piece 
+	background-color: $corFundoScroll
+
+
+::-webkit-scrollbar-thumb:vertical 
+	height: 50px
+	background-color: $corScroll
+	cursor: pointer
+
+
+::-webkit-scrollbar-thumb:horizontal 
+	width: 50px
+	background-color: $corScroll
+	cursor: pointer
+
+
+// ------------------------------------------------------------------
+// Tipography
+// ------------------------------------------------------------------
+
+@import "../fonts/gf-icons/style.css"
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,100italic,300italic,400italic,700italic)
+
+
+@mixin font($weight:300)
+	font-family: 'Lato', 'helvetica', 'Trebuchet MS', 'Arial', sans-serif
+	font-weight: $weight
+
+
+@mixin fontIcon($family: 'gf-icons')
+	font-family: $family
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+
+// ------------------------------------------------------------------
+// GRID
+// ------------------------------------------------------------------ 
+
+$ninesixty-gutter-width: 40px !default
+
+$ninesixty-grid-width: 1200px !default
+
+$ninesixty-columns: 12 !default
+
+$ninesixty-class-separator: "_" !default
+
+@import "_grid.sass"
+
+// ------------------------------------------------------------------
+// Styles Base
+// ------------------------------------------------------------------
+
+$corTexto: $cinza
+$corLink: $corPrincipal
+$corLinkHover: $corPrincipalHover
+$corTitle: $preto
+
+body
+	font-size: 12px
+	color: $corTexto
+	@include font
+	font-size: 11px
+
+	p
+		line-height: 150%
+		font-size: 14px
+		margin-bottom: 20px
+		@include font(300)
+		
+b
+	@include font(900)
+
+a
+	text-decoration: none
+	color: $corLink
+	+transition
+	@include font
+	cursor: pointer
+
+	&:hover
+		color: $corLinkHover
+		text-decoration: none
+
+
+h1, h2, h3, h4, h5, h6
+	@include font(100)
+	color: $corTitle
+	margin-bottom: 20px
+	line-height: 110%
+	text-transform: uppercase
+
+
+
+$titleSize: 50px
+h1
+	font-size: $titleSize
+
+h2
+	font-size: $titleSize - 15
+
+h3
+	font-size: $titleSize - 20
+
+h4
+	font-size: $titleSize - 24
+
+h5
+	font-size: $titleSize - 28
+
+h6
+	font-size: $titleSize - 32
+
+
+
+
+

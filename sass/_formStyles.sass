@@ -1,0 +1,99 @@
+// ------------------------------------------------------------------
+// INPUTS + BUTTONS
+// ------------------------------------------------------------------ 
+
+$textoBotao: $corPrincipalInverso
+$corBotao: $corPrincipal
+$formHeight: 30px
+
+
+input[type="submit"], button, input[type="checkbox"], input[type="radio"], input[type="text"], select
+	cursor: pointer !important
+	&:focus
+		outline: none
+
+input[type="text"], select
+	display: block
+	float: none
+	position: relative
+	font-size: 16px
+	line-height: 20px
+	padding: 8px 16px
+	border: 2px solid $corTexto
+	text-indent: 0
+	color: $corTexto
+	+border-radius(5px)
+	+box-sizing(border-box)
+
+	&:focus
+		border-color: $corPrincipal
+		color: $corPrincipal
+
+input[type="text"]
+	background: $branco
+
+@mixin button3d
+	+font
+	padding: 8px 20px 12px 20px
+	font-size: 20px
+	line-height: 20px
+	text-decoration: none
+	border: none
+	text-transform: uppercase
+	text-align: center
+	color: $textoBotao
+	background: rgba($corBotao, 0.8)
+	+box-sizing(border-box)
+	+border-radius(5px)
+	+box-shadow(rgba($black, 0.1) 0 -5px 0 inset)
+	+transition
+
+	&:hover
+		+box-shadow(rgba($black, 0.3) 0 -3px 0 inset)
+		background: rgba($corBotao, 1)
+
+
+@mixin select
+	background: $branco url(../img/form-select.png) right center no-repeat
+	padding: 8px 36px 8px 16px
+	+appearance(none)
+
+
+@mixin checkbox
+	background: $branco
+	width: 25px
+	height: 25px
+	+appearance(none)
+	+border-radius(5px)
+	+transition
+
+	&:checked
+		background: $corBotao url(../img/form-checkbox-w.png) center center no-repeat
+		+animate(pulseCheck)
+
+@mixin radio
+	background: $branco
+	width: 25px
+	height: 25px
+	+appearance(none)
+	+border-radius(50%)
+	+transition
+
+	&:checked
+		background: $corBotao url(../img/form-radio-w.png) center center no-repeat
+		+animate(pulseCheck)
+
+input[type="submit"], button
+	+button3d
+
+
+html.no-ie
+
+	select
+		+select
+
+	input[type="checkbox"]
+		+checkbox
+
+	input[type="radio"]
+		+radio

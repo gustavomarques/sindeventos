@@ -1,0 +1,6 @@
+name: Guto Framework
+encoding: UTF-8
+markdown: redcarpet
+pygments: true
+safe: false
+permalink: pretty
