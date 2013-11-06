@@ -9,14 +9,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Guto Framework</title>
+	<title>{{page.title}} - Sindeventos</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/ie.css">
+	<link rel="stylesheet" href="{{ site.url }}/css/style.css">
+	<link rel="stylesheet" href="{{ site.url }}/css/ie.css">
 </head>
 
 <body id="{{ page.id }}">
@@ -53,12 +53,12 @@
 		<section id="searchWrapper">
 			<div class="container">
 				<div class="topBanner">
-					<img src="imgTemp/top-banner.png" alt="">
+					<img src="{{ site.url }}/imgTemp/top-banner.png" alt="">
 				</div>
 				<div class="lang">
-					<a href="#" title="" class="active"><img src="img/flag-br.png" alt=""></a>
-					<a href="#" title=""><img src="img/flag-usa.png" alt=""></a>
-					<a href="#" title=""><img src="img/flag-es.png" alt=""></a>
+					<a href="#" title="" class="active"><img src="{{ site.url }}/img/flag-br.png" alt=""></a>
+					<a href="#" title=""><img src="{{ site.url }}/img/flag-usa.png" alt=""></a>
+					<a href="#" title=""><img src="{{ site.url }}/img/flag-es.png" alt=""></a>
 				</div>
 				<div class="search">
 					<h1>Pesquise no site</h1>
@@ -69,23 +69,17 @@
 		</section>
 
 		<section id="logo">
-			<a class="container">
-				<img src="img/logo-sindeventos.png" alt="">
+			<a href="{{ site.url }}" class="container">
+				<img src="{{ site.url }}/img/logo-sindeventos.png" alt="">
 			</a>
 		</section>
 
 		<section id="menu">
 			<div class="container">
 				<nav>
-					<a href="" title="">O Sindicato</a>
-					<a href="" title="">Serviços</a>
-					<a href="" title="">Sindicalizados</a>
-					<a href="" title="">Eventos</a>
-					<a href="" title="">Sala de imprensa</a>
-					<a href="" title="">Parceiros e convênios</a>
-					<a href="" title="">Envio de currículo</a>
-					<a href="" title="">Downloads</a>
-					<a href="" title="">Contatos</a>
+				{% for page in site.pages %}
+					<a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a>
+				{% endfor %}
 				</nav>
 			</div>
 		</section>

@@ -3,4 +3,5 @@ encoding: UTF-8
 markdown: redcarpet
 pygments: true
 safe: false
-permalink: pretty
+permalink: none
+relative_permalinks: false

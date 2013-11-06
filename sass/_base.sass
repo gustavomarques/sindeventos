@@ -115,15 +115,16 @@ $corFundoScroll: $corPrincipalInverso
 // GRID
 // ------------------------------------------------------------------ 
 
-$ninesixty-gutter-width: 40px !default
+@import grid
 
-$ninesixty-grid-width: 1200px !default
+.container_12
+	+grid-system(12)
+	position: relative
+	+clearfix
+	display: block
 
-$ninesixty-columns: 12 !default
-
-$ninesixty-class-separator: "_" !default
-
-@import "_grid.sass"
+.container_16
+	+grid-system(16)
 
 // ------------------------------------------------------------------
 // Styles Base

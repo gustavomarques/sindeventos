@@ -1,5 +1,5 @@
 // ------------------------------------------------------------------
-// General
+// Header
 // ------------------------------------------------------------------
 
 body > section#contentWrapper
@@ -8,18 +8,17 @@ body > section#contentWrapper
 		+animate(fadeInUp)
 
 header.active
-	#topMenu
-		+animate(fadeInDown)
 	#searchWrapper
-		+animate(fadeInUp, $delay: 1.5s)
+		+animate(fadeInUp, $delay: 1s)
 	#logo
 		+animate(bounceIn)
 	#menu
 		+animate(fadeInUp)
 
 .container
-	+grid-container
-	+clearfix
+	+grid-system(12)
+	+clearfix	
+	position: relative
 	display: block
 
 body
@@ -215,75 +214,9 @@ body
 					+scale(1.7)
 		.accordion
 			position: absolute
-			width: 360px
-			display: block
-			min-height: 100px
 			top: 50px
 			right: 100px
 			z-index: 99
-			background: $brancoCinza
-			+border-radius(5px)
-			.accord-header
-				cursor: pointer
-				font-size: 16px
-				font-weight: bold
-				padding: 20px
-				text-transform: uppercase
-				&.active
-					background: rgba($black, 0.03)
-					color: $verde
-			.accord-content
-				display: none
-				background: rgba($black, 0.03)
-				
-				form
-					padding: 2px 20px 60px 20px
-					position: relative
-					display: block
-					+clearfix
-
-					select, input
-						display: block
-						width: 100%
-						margin: 0 0 10px 0
-						float: left
-					button
-						position: absolute
-						bottom: 0
-						left: 0
-						right: 0
-						+border-radius(0 0 5px 5px)
-						height: 50px
-						margin: 0
-					.uf
-						width: 70px
-					.cidade
-						width: 115px
-						margin: 0 10px 10px 10px
-					.bairro
-						width: 115px
-
-					.periodo
-						label, input
-							display: block
-							float: left
-
-						label
-							font-size: 17px
-							color: $corTexto
-							width: 80px
-							line-height: 40px
-							font-weight: 400
-
-						input
-							width: 240px
-
-				&.active
-					form
-						+animate(fadeInUp)
-				&.pesquisa
-					display: block
-
 
 	.associe-se
 		width: 100%
@@ -308,20 +241,43 @@ body
 				font-size: 30px
 
 // ------------------------------------------------------------------
-// Header
+// Body
 // ------------------------------------------------------------------
 
 body
 	#contentWrapper
 		padding-top: 50px
+		+grid-system(12)
+		position: relative
 		+clearfix
+
 		#content
-			+grid(8)
+			$ninesixty-grid-width: 800px
+			+grid-system(12)
+			+clearfix
+			position: relative
+			float: left
+			display: block
+
 			& > section
+				+grid(12)
+				+clearfix
 				margin-bottom: 50px
 				display: block
-				+clearfix
 				position: relative
+
+				& > img
+					width: 100%
+					display: block
+					margin-bottom: 20px
+
+				& > p:last-child
+					margin-bottom: 0
+
+				& > h2, & > h3, & > h4, & > h5, & > h6
+					margin-bottom: 10px
+					padding-top: 20px
+
 			.eventos
 				& > a
 					text-transform: uppercase
@@ -402,6 +358,7 @@ body
 					float: left
 					margin-right: 40px
 					margin-bottom: 20px
+					width: 360px
 
 			.noticias
 				padding: 20px 30px 40px 30px
@@ -437,6 +394,7 @@ body
 					color: $cinzaEscuro
 
 		#sidebar
+			$ninesixty-grid-width: 1200px
 			+grid(4)
 
 
@@ -495,6 +453,84 @@ body
 // ------------------------------------------------------------------
 // Sidebar
 // ------------------------------------------------------------------
+
+#pesquisar.accordion
+	width: 360px
+	display: block
+	min-height: 100px
+	background: $brancoCinza
+	+border-radius(5px)
+	.accord-header
+		cursor: pointer
+		font-size: 16px
+		font-weight: bold
+		padding: 20px
+		text-transform: uppercase
+		&.active
+			background: rgba($black, 0.03)
+			color: $verde
+	.accord-content
+		display: none
+		background: rgba($black, 0.03)
+		
+		form
+			padding: 2px 20px 60px 20px
+			position: relative
+			display: block
+			+clearfix
+
+			select, input
+				display: block
+				width: 100%
+				margin: 0 0 10px 0
+				float: left
+			button
+				position: absolute
+				bottom: 0
+				left: 0
+				right: 0
+				+border-radius(0 0 5px 5px)
+				height: 50px
+				margin: 0
+			.uf
+				width: 70px
+			.cidade
+				width: 115px
+				margin: 0 10px 10px 10px
+			.bairro
+				width: 115px
+
+			.periodo
+				label, input
+					display: block
+					float: left
+
+				label
+					font-size: 17px
+					color: $corTexto
+					width: 80px
+					line-height: 40px
+					font-weight: 400
+
+				input
+					width: 240px
+
+		&.active
+			form
+				+animate(fadeInUp)
+		&.pesquisa
+			display: block
+
+#home #pesquisar.accordion
+	display: none
+
+#home #banner #pesquisar.accordion
+	display: block
+
+body:not(#home) #sidebar .widget
+	&#enquete, &#newsletter
+		display: none
+
 
 #sidebar
 	.widget
@@ -621,8 +657,41 @@ body
 
 
 
+// ------------------------------------------------------------------
+// PAGE GENERAL
+// ------------------------------------------------------------------
+
+#pageHeader
+	background: $brancoCinza
+	margin-top: 20px
+	display: block
+	padding: 20px
+	position: relative
+
+	h1
+		+grid(8)
+		margin: 0
+
+	a.associe-se
+		+grid(4)
+		padding: 12px
+		font-size: 14px
+		line-height: 18px
+		margin-top: -30px
+		height: 60px
+		top: 50%
+		position: absolute
+		span
+			font-size: 12px
+
+		&:hover
+			+scale(1.4)
 
 
+	&.active
+		+animate(fadeIn, $delay: 1s)
 
+		a.associe-se
+			+animate(fadeInRightBig, $delay: 2s)
 
 
