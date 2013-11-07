@@ -15,7 +15,7 @@ header.active
 	#menu
 		+animate(fadeInUp)
 
-.container
+.container, .wrapper
 	+grid-system(12)
 	+clearfix	
 	position: relative
@@ -91,6 +91,8 @@ body
 				.topBanner
 					+grid(8)
 					height: 90px
+					img
+						height: 90px
 
 				.lang, .search
 					+grid(4)
@@ -103,7 +105,7 @@ body
 						margin-right: 10px
 
 						&:not(.active)
-							+grayscale
+							+desaturate
 							opacity: 0.5
 				.search
 					padding-top: 15px
@@ -251,7 +253,7 @@ body
 		position: relative
 		+clearfix
 
-		#content
+		.wrapper
 			$ninesixty-grid-width: 800px
 			+grid-system(12)
 			+clearfix
@@ -259,25 +261,44 @@ body
 			float: left
 			display: block
 
-			& > section
+			& > *
 				+grid(12)
 				+clearfix
 				margin-bottom: 50px
 				display: block
 				position: relative
 
-				& > img
+				img
 					width: 100%
 					display: block
 					margin-bottom: 20px
 
-				& > p:last-child
+				p:last-child
 					margin-bottom: 0
 
-				& > h2, & > h3, & > h4, & > h5, & > h6
-					margin-bottom: 10px
-					padding-top: 20px
 
+		#sidebar
+			$ninesixty-grid-width: 1200px
+			+grid(4)
+
+
+@mixin greenTitle
+	color: $verde
+	text-transform: none
+	font-weight: 700
+	display: block
+	float: none
+
+.greenTitle
+	+greenTitle
+
+
+// ------------------------------------------------------------------
+// Content - Home
+// ------------------------------------------------------------------
+body
+	#contentWrapper
+		.wrapper
 			.eventos
 				& > a
 					text-transform: uppercase
@@ -352,7 +373,6 @@ body
 									display: block
 
 			.palavraPresidente
-				margin-bottom: 30px
 				& > img
 					display: block
 					float: left
@@ -393,62 +413,131 @@ body
 					line-height: 30px
 					color: $cinzaEscuro
 
-		#sidebar
-			$ninesixty-grid-width: 1200px
-			+grid(4)
 
 
 
 // ------------------------------------------------------------------
-// Content
-// ------------------------------------------------------------------
-
-
-
-
-// ------------------------------------------------------------------
-// Footer
+// Content - O sindicato
 // ------------------------------------------------------------------
 body
-	footer
-		background: $brancoCinza
-		padding: 50px 0
-		width: 100%
-		+clearfix
-		display: block
+	#contentWrapper
+		.wrapper
+			.equipe
+				$ninesixty-grid-width: 800px
+				+grid-system(12)
 
-		& > img
-			display: block
-			width: 360px
-			float: none
-			margin: 0 auto
+				.greenTitle
+					+grid(12)
+					+greenTitle
 
-		& > ul
-			display: block
-			margin-top: 50px
-			+clearfix
-			li
-				+grid(2)
-				h1
-					font-size: 15px
-					font-weight: 700
+				li
+					position: relative
+					margin: 0
+					padding: 20px
 					margin-bottom: 10px
-				a
+					+grid(3, $gutter-width: 0)
+					+box-sizing(border-box)
+					+border-radius(10px)
+					
+					&, & *
+						+transition
+
+					& > img
+						+border-radius(500px)
+						display: block
+						float: none
+						+scale(0.8)
+						margin-bottom: -10px
+					h3
+						font-size: 24px
+						text-align: left
+						margin-bottom: 0
+						height: 60px
+						display: table-cell
+						vertical-align: middle
+
+					h4
+						font-size: 13px
+						color: $verde
+
+					&:hover
+						background: $brancoCinza
+						h3
+							+translateY(25px)
+						h4
+							opacity: 0
+
+						& > img
+							+scale(1)
+
+
+
+// ------------------------------------------------------------------
+// Content - Servicos
+// ------------------------------------------------------------------
+
+body #contentWrapper
+	.wrapper 
+		.slider
+			#slider
+				margin: 0
+				img
+					margin: 0
+			#carousel
+				padding: 10px 60px
+				position: relative
+				background: $verde
+
+				img
+					margin: 0
+
+				.flex-direction-nav
+					.flex-prev, .flex-next
+						&:hover
+							color: $brancoCinza
+				li
+					+desaturate
+					cursor: pointer
+					background: $verdeEscuro
+					margin: 1px
+					img
+						opacity: 0.6
+
+				li.flex-active-slide
+					+desaturate(0)
+					img
+						opacity: 1
+
+		.outrosServicos
+			$ninesixty-grid-width: 800px
+			+grid-system(12)
+
+			.greenTitle
+				+grid(12)
+
+			a
+				+grid(12)
+				background: $brancoCinza
+				+box-sizing(border-box)
+				padding: 20px
+				+bordinha
+
+				& > img
 					display: block
-					padding: 7px 0
-					font-size: 13px
-					font-weight: 400
-	.direitos
-		width: 100%
-		+clearfix
-		display: block
-		line-height: 60px
-		background: $verde
-		text-align: center
-		text-transform: uppercase
-		font-weight: 700
-		font-size: 10px
-		color: $brancoCinza
+					width: 260px
+					margin: 0 20px 0 0
+					float: left
+
+				h3
+					margin-bottom: 10px
+					font-weight: 700
+
+				&:hover
+					background: $verde
+					*
+						color: $brancoCinza
+
+
 
 // ------------------------------------------------------------------
 // Sidebar
@@ -600,6 +689,55 @@ body:not(#home) #sidebar .widget
 				margin-bottom: 5px
 				padding-top: 10px
 
+
+
+// ------------------------------------------------------------------
+// Footer
+// ------------------------------------------------------------------
+body
+	footer
+		background: $brancoCinza
+		padding: 50px 0
+		width: 100%
+		+clearfix
+		display: block
+
+		& > img
+			display: block
+			width: 360px
+			float: none
+			margin: 0 auto
+
+		& > ul
+			display: block
+			margin-top: 50px
+			+clearfix
+			li
+				+grid(2)
+				h1
+					font-size: 15px
+					font-weight: 700
+					margin-bottom: 10px
+				a
+					display: block
+					padding: 7px 0
+					font-size: 13px
+					font-weight: 400
+	.direitos
+		width: 100%
+		+clearfix
+		display: block
+		line-height: 60px
+		background: $verde
+		text-align: center
+		text-transform: uppercase
+		font-weight: 700
+		font-size: 10px
+		color: $brancoCinza
+
+
+
+
 // ------------------------------------------------------------------
 // Outros
 // ------------------------------------------------------------------
@@ -669,18 +807,19 @@ body:not(#home) #sidebar .widget
 	position: relative
 
 	h1
-		+grid(8)
+		display: block
 		margin: 0
 
 	a.associe-se
-		+grid(4)
 		padding: 12px
 		font-size: 14px
 		line-height: 18px
 		margin-top: -30px
-		height: 60px
 		top: 50%
+		right: 0
+		width: 360px
 		position: absolute
+		height: 36px
 		span
 			font-size: 12px
 

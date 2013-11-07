@@ -3,5 +3,12 @@ encoding: UTF-8
 markdown: redcarpet
 pygments: true
 safe: false
-permalink: none
 relative_permalinks: false
+
+safe:        false
+watch:       false    # deprecated
+server:      false    # deprecated
+host:        0.0.0.0
+port:        4001
+baseurl:     /
+lsi:         false

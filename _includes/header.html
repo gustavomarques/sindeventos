@@ -15,8 +15,8 @@
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-	<link rel="stylesheet" href="{{ site.url }}/css/style.css">
-	<link rel="stylesheet" href="{{ site.url }}/css/ie.css">
+	<link rel="stylesheet" href="{{ site.url }}css/style.css">
+	<link rel="stylesheet" href="{{ site.url }}css/ie.css">
 </head>
 
 <body id="{{ page.id }}">
@@ -53,12 +53,12 @@
 		<section id="searchWrapper">
 			<div class="container">
 				<div class="topBanner">
-					<img src="{{ site.url }}/imgTemp/top-banner.png" alt="">
+					<img src="{{ site.url }}imgTemp/top-banner.png" alt="">
 				</div>
 				<div class="lang">
-					<a href="#" title="" class="active"><img src="{{ site.url }}/img/flag-br.png" alt=""></a>
-					<a href="#" title=""><img src="{{ site.url }}/img/flag-usa.png" alt=""></a>
-					<a href="#" title=""><img src="{{ site.url }}/img/flag-es.png" alt=""></a>
+					<a href="#" title="" class="active"><img src="{{ site.url }}img/flag-br.png" alt=""></a>
+					<a href="#" title=""><img src="{{ site.url }}img/flag-usa.png" alt=""></a>
+					<a href="#" title=""><img src="{{ site.url }}img/flag-es.png" alt=""></a>
 				</div>
 				<div class="search">
 					<h1>Pesquise no site</h1>
@@ -70,16 +70,26 @@
 
 		<section id="logo">
 			<a href="{{ site.url }}" class="container">
-				<img src="{{ site.url }}/img/logo-sindeventos.png" alt="">
+				<img src="{{ site.url }}img/logo-sindeventos.png" alt="">
 			</a>
 		</section>
 
 		<section id="menu">
 			<div class="container">
+				<!--
 				<nav>
 				{% for page in site.pages %}
 					<a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a>
 				{% endfor %}
+				</nav>
+				-->
+				<nav>
+					<a href="index.html" title="Home">Home</a>
+					<a href="o_sindicato.html" title="O Sindicato">O Sindicato</a>
+					<a href="servicos.html" title="Serviços">Serviços</a>
+					<!--
+					<a href=".html" title=""></a>
+					-->
 				</nav>
 			</div>
 		</section>
