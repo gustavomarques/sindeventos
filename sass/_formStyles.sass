@@ -7,24 +7,25 @@ $corBotao: $corPrincipal
 $formHeight: 30px
 
 
-input[type="submit"], button, input[type="checkbox"], input[type="radio"], input[type="text"], select
+input, input[type="submit"], button, input[type="checkbox"], input[type="radio"], input[type="text"], select, textarea
 	cursor: pointer !important
 	&:focus
 		outline: none
 
-input[type="text"], select
+input, input[type="text"], select, textarea
 	display: block
 	float: none
 	position: relative
 	font-size: 16px
 	line-height: 20px
-	padding: 8px 16px
+	padding: 8px 10px
 	border: 2px solid $cinzaClaro
 	text-indent: 0
 	color: $corTexto
 	+border-radius(5px)
 	+box-sizing(border-box)
-
+	margin: 10px 0
+	width: 100%
 	&:focus
 		border-color: $corPrincipal
 		color: $corPrincipal
@@ -57,7 +58,7 @@ input[type="text"]
 
 @mixin select
 	background: $branco url(../img/form-select.png) right center no-repeat
-	padding: 8px 36px 8px 16px
+	padding-right: 36px
 	+appearance(none)
 
 
@@ -89,8 +90,13 @@ input[type="submit"], button
 	+button3d
 
 
-html.no-ie
+@mixin uploadBt
+	background: $brancoCinza
+	+appearance(none)
+	color: $verde
 
+
+html.no-ie
 	select
 		+select
 
@@ -99,3 +105,7 @@ html.no-ie
 
 	input[type="radio"]
 		+radio
+
+	//input[type="file"]
+	//	+uploadBt
+	//	+button3d

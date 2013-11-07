@@ -130,6 +130,7 @@ body
 						+border-radius(0 5px 5px 0)
 						height: 36px
 						padding: 0 10px
+						width: 40px
 
 			&#logo
 				padding: 20px 0
@@ -476,66 +477,251 @@ body
 // Content - Servicos
 // ------------------------------------------------------------------
 
-body #contentWrapper
-	.wrapper 
-		.slider
-			#slider
-				margin: 0
-				img
+body 
+	#contentWrapper
+		.wrapper 
+			.slider
+				.flexslider
 					margin: 0
-			#carousel
-				padding: 10px 60px
-				position: relative
-				background: $verde
-
-				img
-					margin: 0
-
-				.flex-direction-nav
-					.flex-prev, .flex-next
-						&:hover
-							color: $brancoCinza
-				li
-					+desaturate
-					cursor: pointer
-					background: $verdeEscuro
-					margin: 1px
 					img
-						opacity: 0.6
-
-				li.flex-active-slide
-					+desaturate(0)
-					img
-						opacity: 1
-
-		.outrosServicos
-			$ninesixty-grid-width: 800px
-			+grid-system(12)
-
-			.greenTitle
-				+grid(12)
-
-			a
-				+grid(12)
-				background: $brancoCinza
-				+box-sizing(border-box)
-				padding: 20px
-				+bordinha
-
-				& > img
-					display: block
-					width: 260px
-					margin: 0 20px 0 0
-					float: left
-
-				h3
-					margin-bottom: 10px
-					font-weight: 700
-
-				&:hover
+						margin: 0
+				.carousel
+					padding: 10px 60px
+					position: relative
 					background: $verde
-					*
+
+					img
+						margin: 0
+
+					.flex-direction-nav
+						.flex-prev, .flex-next
+							display: block
+
+							&:hover
+								color: $brancoCinza
+					li
+						cursor: pointer
+						margin: 1px
+						background: $black
+						width: 135px
+						a
+							display: block
+						img
+							+desaturate
+							opacity: 0.6
+
+					li.flex-active-slide
+						img
+							+desaturate(0)
+							opacity: 1
+
+			.listHorizontal
+				$ninesixty-grid-width: 800px
+				+grid-system(12)
+
+				.greenTitle
+					+grid(12)
+
+				a
+					+grid(12)
+					background: $brancoCinza
+					+box-sizing(border-box)
+					padding: 20px
+					+bordinha
+
+					& > img
+						display: block
+						width: 260px
+						margin: 0 20px 0 0
+						float: left
+
+					h3
+						margin-bottom: 10px
+						font-weight: 700
+
+					&:hover
+						background: $verde
+						*
+							color: $brancoCinza
+
+
+
+
+
+
+// ------------------------------------------------------------------
+// Content - sindicalizar
+// ------------------------------------------------------------------
+
+body 
+	#contentWrapper
+		.wrapper 
+			.sindicalizar
+				$ninesixty-grid-width: 800px
+				+grid-system(12)
+
+				.greenTitle, & > p
+					+grid(12)
+
+				.greenTitle
+					+greenTitle
+
+				& > div
+					position: relative
+					margin: 0
+					padding: 20px
+					margin-bottom: 10px
+					+grid(4, $gutter-width: 0)
+					+box-sizing(border-box)
+					+border-radius(10px)
+					
+					&, & *
+						+transition
+
+					& > img
+						+border-radius(500px)
+						display: block
+						float: none
+						+scale(0.8)
+						margin-bottom: -15px
+					h3
+						font-size: 24px
+						text-align: left
+						margin-bottom: 0
+						display: block
+						text-align: center
+						padding: 20px 0
+						font-weight: 700
+						color: $verde
+
+					&:hover
+						background: $brancoCinza
+						h3
+							+translateY(10px)
+						h4
+							opacity: 0
+
+						& > img
+							+scale(1)
+
+
+
+
+
+// ------------------------------------------------------------------
+// Content - Eventos
+// ------------------------------------------------------------------
+
+body 
+	#contentWrapper
+		.wrapper 
+			.eventos
+				& > div
+					& > a
+						height: 498px
+						+bgCover
+
+						.caption
+							p
+								display: block
+
+			.paginator
+				background: $brancoCinza
+				+border-radius(5px)
+				display: block
+				text-align: center
+				position: relative
+				height: 45px
+				padding: 10px 80px
+
+				a
+					display: inline-block
+					+border-radius(50%)
+					height: 25px
+					width: 25px
+					background: $branco
+					color: $verde
+					line-height: 25px
+					margin: 0 10px
+					+font(700)
+					font-size: 11px
+
+					&:hover, &.active
+						background: $verde
 						color: $brancoCinza
+						+scale(1.3)
+
+					&.next, &.prev
+						position: absolute
+						top: 0
+						bottom: 0
+						height: 45px
+						line-height: 45px
+						font-size: 30px
+						width: 70px
+						background: $brancoCinza
+						color: $verde
+						text-align: center
+						text-indent: 0
+						margin: 0
+						+fontIcon
+						&:hover
+							+scale(1)
+							background: $verde
+							color: $brancoCinza
+
+					&.next
+						right: 0
+						border-left: 2px solid $branco
+						+border-radius(0 5px 5px 0)
+						&:before
+							content: "\e62b"
+							line-height: 45px
+
+					&.prev
+						left: 0
+						border-right: 2px solid $branco
+						+border-radius(5px 0 0 5px)
+						&:before
+							content: "\e629"
+							line-height: 45px
+
+
+
+
+
+
+// ------------------------------------------------------------------
+// Content - Curriculos
+// ------------------------------------------------------------------
+
+body 
+	#contentWrapper
+		.wrapper 
+			form
+				$ninesixty-grid-width: 800px
+				+grid-system(12)
+
+				.greenTitle
+					+grid(12)
+
+				& > div
+					+grid(12)
+					margin-bottom: 40px
+
+				label
+					font-size: 14px
+					font-weight: 700
+					text-transform: uppercase
+
+				& > input[type="submit"], & > button
+					float: right
+					margin-right: 20px
+					display: block
+					width: 250px
+					height: 60px
+
+
 
 
 
@@ -696,6 +882,7 @@ body:not(#home) #sidebar .widget
 // ------------------------------------------------------------------
 body
 	footer
+		$ninesixty-grid-width: 1200px
 		background: $brancoCinza
 		padding: 50px 0
 		width: 100%
@@ -834,3 +1021,75 @@ body
 			+animate(fadeInRightBig, $delay: 2s)
 
 
+
+.custom-upload
+	position: relative
+	cursor: pointer
+	margin-top: 10px
+	input
+		width: 100%
+		margin: 0
+
+	input[type=file]
+		outline: none
+		position: relative
+		text-align: right
+		opacity: 0
+		z-index: 2
+		width: 100%
+		height: 100%
+	.fake-file
+		position: absolute
+		top: 0px
+		left: 0px
+		right: 0
+		bottom: 0
+		padding: 0
+		margin: 0
+		z-index: 1
+		line-height: 100%
+
+		&:after
+			display: block
+			width: 250px
+			position: absolute
+			top: 0
+			bottom: 0
+			right: 0
+			+button3d
+			content: "Fazer upload"
+			height: 40px
+			background: $cinzaClaro
+			color: $cinzaEscuro
+			+border-radius(0 5px 5px 0)
+//
+//	.fake-file
+//		position: absolute
+//		top: 0px
+//		left: 0px
+//		right: 0px
+//		bottom: 0px
+//		padding: 0
+//		margin: 0
+//		z-index: 2
+//		input
+//			display: block
+//			width: 100%
+//			padding-right: 100px
+//			margin: 0
+//
+//		&:after
+//			display: block
+//			width: 250px
+//			position: absolute
+//			top: 0
+//			bottom: 0
+//			right: 0
+//			+button3d
+//			content: "Fazer upload"
+//			height: 40px
+//			background: $cinzaClaro
+//			color: $cinzaEscuro
+//			+border-radius(0 5px 5px 0)
+//
+//

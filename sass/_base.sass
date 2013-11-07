@@ -105,10 +105,18 @@ $corFundoScroll: $corPrincipalInverso
 	font-weight: $weight
 
 
-@mixin fontIcon($family: 'gf-icons')
-	font-family: $family
+@mixin fontIcon($content: "\e629")
+	font-family: 'gf-icons'
+	speak: none
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	line-height: 1
 	-webkit-font-smoothing: antialiased
 	-moz-osx-font-smoothing: grayscale
+	&:before
+		content: $content
 
 
 // ------------------------------------------------------------------

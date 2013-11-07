@@ -1,0 +1,65 @@
+---
+layout: default
+title: Envio de currículo
+id: curriculo
+---
+	<section id="pageHeader">
+		<div class="wrapper">
+			<h1>{{ page.title }}</h1>
+			<a href="#" title="" class="associe-se">Quer se tornar um associado?<span>cadastre-se em menos de 1 minuto</span></a>
+		</div>
+	</section>
+
+	<section id="contentWrapper">
+		<div class="wrapper">
+			<form> 
+				<h2 class="greenTitle">Informações para contato</h2>
+				<div class="grid_4">
+					<label>Insira seu nome</label>
+					<input type="text">
+				</div>
+				<div class="grid_4">
+					<label>Insira seu e-mail</label>
+					<input type="text">
+				</div>
+				<div class="grid_4">
+					<label>Insira seu telefone</label>
+					<input type="text">
+				</div>
+
+				<h2 class="greenTitle">Resumo do currículo</h2>
+				<div class="grid_12">
+					<label>Objetivo</label>
+					<textarea rows="6"></textarea>
+				</div>
+				<div class="grid_12">
+					<label>Resumo do currículo</label>
+					<textarea rows="6"></textarea>
+				</div>
+				<div class="grid_12">
+					<label>Cursos e capacitações</label>
+					<textarea rows="6"></textarea>
+				</div>
+
+				<h2 class="greenTitle">Envie seu currículo</h2>
+				<div class="grid_12">
+					<label>Envie seu currículo no format PDF ou DOC</label>
+					<div class="custom-upload">
+						<input type="file">
+						<div class="fake-file">
+							<input disabled="disabled" >
+						</div>
+					</div>
+				</div>
+				<button type="" onClick="location.href='obrigado.html'">Enviar currículo</button>
+			</form>
+		</div>
+
+		<div id="sidebar">
+{% include sidebar.html %}
+		</div>
+	</section>
+
+
+
+
