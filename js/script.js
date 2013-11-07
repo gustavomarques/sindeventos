@@ -17,6 +17,12 @@ $("body > header").waypoint(function() {
 }, { offset: 400 });
 
 
+//	$(".cidade > a").click(function(){
+//		$(".cidade > nav").slideToggle();
+//	});
+
+
+
 
 $(document).ready(function() {
 	$(".accordion .accord-header").click(function() {
@@ -30,10 +36,6 @@ $(document).ready(function() {
 		}
 	});
 
-	$(".cidade > a").click(function(){
-		$(".cidade > nav").slideToggle();
-	});
-
 	$('#banner ul').after('<div id="bannerNav">').cycle({ 
 		fx: 'fade', 
 		speed: 'fast', 
@@ -44,6 +46,26 @@ $(document).ready(function() {
 	$('#dataPesquisa').daterangepicker({
 		opens: 'left'
 	});
+
+
+	$(".modal .btClose").click(function(){
+		$(".modal").removeClass("open").addClass("close").slideUp("fast");
+		return false;
+	});
+
+
+	$(".newsletter_link").click(function(){
+		$(".modal.login.open").removeClass("open").addClass("close").slideUp("fast"); 
+		$(".modal.newsletter").removeClass("close").addClass("open").slideDown("slow");
+		return false;
+	});
+
+	$(".login_link").click(function(){
+		$(".modal.newsletter.open").removeClass("open").addClass("close").slideUp("fast"); 
+		$(".modal.login").removeClass("close").addClass("open").slideDown("slow");
+		return false;
+	});
+
 });
 
 

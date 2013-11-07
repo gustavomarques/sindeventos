@@ -57,14 +57,7 @@ body
 						position: relative
 						padding: 0 40px 0 20px
 
-						&:after
-							+fontIcon
-							content: "\e624"
-							position: absolute
-							top: 0
-							right: 10px
-							font-size: 20px
-							line-height: 50px
+
 					& > nav
 						background: $brancoCinza
 						+grid(3, $gutter-width: 0)
@@ -1037,7 +1030,65 @@ body
 					background: $cinzaClaro
 					color: $cinzaEscuro
 
+.modal
+	background: $verde
+	padding: 30px 0
+	+box-shadow(rgba($black, 0.2) 0 -30px 40px inset)
+	display: block
+	float: none
+	width: 100%
+	display: none
+	*
+		color: $brancoCinza
 
+	a.btClose
+		width: 50px
+		height: 50px
+		position: absolute
+		top: 0
+		right: 0
+		font-size: 50px
+		+fontIcon("\e61b")
+		color: $verdeEscuro
+		&:hover
+			color: $brancoCinza
+
+	h1, h2
+		+grid(12)
+	h1
+		margin-bottom: 0
+
+	h2
+		font-weight: 700
+		font-size: 24px
+		margin-bottom: 30px
+
+	input
+		border-color: $verdeEscuro
+
+	label
+		font-size: 14px
+		font-weight: 700
+		text-transform: uppercase
+
+	input[type="button"]
+		width: 360px
+		height: 60px
+		display: block
+		float: right
+		margin-right: 20px
+		background: $brancoCinza
+		color: $cinzaEscuro
+	div > a
+		font-size: 14px
+		text-align: right
+		display: block
+		float: right
+		line-height: 18px
+		font-weight: 700
+		color: $verdeEscuro
+		&:hover
+			color: $brancoCinza
 
 
 // ------------------------------------------------------------------

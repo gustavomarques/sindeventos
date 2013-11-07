@@ -24,11 +24,51 @@
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
 
+	<div class="modal login close">
+		<form class="wrapper">
+			<a href="#" title="" class="btClose"></a>
+			<h1>Área restrita</h1>
+			<h2>Informe os campos abaixo para acessar nosso sitema</h2>
+			<div class="grid_6">
+				<label>Nome de usuário</label>
+				<input type="text">
+				<a href="#" title="">Clique aqui se você esqueceu seu usuário!</a>
+			</div>
+			<div class="grid_6">
+				<label>Senha</label>
+				<input type="text">
+				<a href="#" title="">Clique aqui se você esqueceu sua senha!</a>
+			</div>
+			<input type="button" name="" value="Enviar mensagem" onClick="location.href='obrigado.html'">
+		</form>
+	</div>
+
+	<div class="modal newsletter close">
+		<form class="wrapper">
+			<a href="#" title="" class="btClose"></a>
+			<h1>Newsletter</h1>
+			<h2>Para receber nossa newsletter é fácil, basta preencher os campos abaixo</h2>
+			<div class="grid_4">
+				<label>Insira seu nome</label>
+				<input type="text">
+			</div>
+			<div class="grid_4">
+				<label>Insira seu e-mail</label>
+				<input type="text">
+			</div>
+			<div class="grid_4">
+				<label>Insira seu telefone</label>
+				<input type="text">
+			</div>
+			<input type="button" name="" value="Enviar mensagem" onClick="location.href='obrigado.html'">
+		</form>
+	</div>
 	<header>
 		<section id="topMenu">
 			<div class="container">
 				<div class="cidade">
 					<a href="#" title="">Brasília</a>
+					<!--
 					<nav>
 						<a href="#" title="">Goiania</a>
 						<a href="#" title="">São Paulo</a>
@@ -37,6 +77,7 @@
 						<a href="#" title="">João Pessoa</a>
 						<a href="#" title="">Florianópolis</a>
 					</nav>
+					-->
 				</div>
 				<nav>
 					<a href="associe-se.html" title="">Associe-se</a>
@@ -45,8 +86,8 @@
 					<a href="dicas.html" title="">Dicas e assessoria</a>
 					<a href="uteis.html" title="">informações úteis</a>
 					<a href="distacias.html" title="">distâncias</a>
-					<a href=".html" title="">newsletter</a>
-					<a href=".html" title="">área restrita</a>
+					<a href=".html" title="" class="newsletter_link">newsletter</a>
+					<a href=".html" title="" class="login_link">área restrita</a>
 				</nav>
 			</div>
 		</section>
@@ -92,7 +133,7 @@
 					<a href="sala_de_imprensa.html" title="Sala de imprensa">Sala de imprensa</a>
 					<a href="parceiros.html" title="parceiros">parceiros e convênios</a>
 					<a href="curriculo.html" title="curriculo">envio de curriculo</a>
-					<a href="download.html" title="download">download</a>
+					<a href="downloads.html" title="downloads">downloads</a>
 					<a href="contato.html" title="contato">contato</a>
 					<!--
 					<a href="index.html" title="Home">Home</a>
