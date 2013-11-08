@@ -271,6 +271,18 @@ body
 				p:last-child
 					margin-bottom: 0
 
+			& > section.container
+				$ninesixty-grid-width: 800px
+				+grid-system(12)
+				margin-left: 0
+				margin-right: 0
+
+				& > *
+					margin-left: 20px
+					margin-right: 20px
+				
+				.right
+					float: right
 
 		#sidebar
 			$ninesixty-grid-width: 1200px
@@ -774,6 +786,29 @@ body
 						background: $verde
 						*
 							color: $brancoCinza
+
+
+
+
+// ------------------------------------------------------------------
+// Content - Uteis
+// ------------------------------------------------------------------
+
+body 
+	#contentWrapper
+		.wrapper 
+			.distanciaTable
+				$ninesixty-grid-width: 800px
+				+grid-system(12)
+				form
+					+clearfix
+					display: block
+					float: left
+					margin-top: 40px
+					& > div
+						margin-bottom: 20px
+
+
 
 
 // ------------------------------------------------------------------
