@@ -29,17 +29,20 @@
 			<a href="#" title="" class="btClose"></a>
 			<h1>Área restrita</h1>
 			<h2>Informe os campos abaixo para acessar nosso sitema</h2>
-			<div class="grid_6">
+			<div class="grid_4">
 				<label>Nome de usuário</label>
 				<input type="text">
 				<a href="#" title="">Clique aqui se você esqueceu seu usuário!</a>
 			</div>
-			<div class="grid_6">
+			<div class="grid_4">
 				<label>Senha</label>
 				<input type="text">
 				<a href="#" title="">Clique aqui se você esqueceu sua senha!</a>
 			</div>
-			<input type="button" name="" value="Enviar mensagem" onClick="location.href='obrigado.html'">
+			<div class="grid_4">
+				<input type="button" name="" value="Fazer login" onClick="location.href='obrigado.html'">
+			</div>
+			
 		</form>
 	</div>
 
@@ -66,18 +69,10 @@
 	<header>
 		<section id="topMenu">
 			<div class="container">
-				<div class="cidade">
-					<a href="cidade.html" title="">Brasília</a>
-					<!--
-					<nav>
-						<a href="#" title="">Goiania</a>
-						<a href="#" title="">São Paulo</a>
-						<a href="#" title="">Belo Horizonte</a>
-						<a href="#" title="">Natal</a>
-						<a href="#" title="">João Pessoa</a>
-						<a href="#" title="">Florianópolis</a>
-					</nav>
-					-->
+				<div class="lang">
+					<a href="#" title="" class="active"><img src="{{ site.url }}img/flag-br.png" alt=""></a>
+					<a href="#" title=""><img src="{{ site.url }}img/flag-usa.png" alt=""></a>
+					<a href="#" title=""><img src="{{ site.url }}img/flag-es.png" alt=""></a>
 				</div>
 				<nav>
 					<a href="associe-se.html" title="">Associe-se</a>
@@ -92,28 +87,15 @@
 			</div>
 		</section>
 
-		<section id="searchWrapper">
+		<section id="logoWrapper">
 			<div class="container">
-				<div class="topBanner">
+				<a href="index.html">
+					<img src="{{ site.url }}img/logo-sindeventos2.png" alt="">
+				</a>
+				<a href="http://google.com" target="blank" class="topBanner">
 					<img src="{{ site.url }}imgTemp/top-banner.png" alt="">
-				</div>
-				<div class="lang">
-					<a href="#" title="" class="active"><img src="{{ site.url }}img/flag-br.png" alt=""></a>
-					<a href="#" title=""><img src="{{ site.url }}img/flag-usa.png" alt=""></a>
-					<a href="#" title=""><img src="{{ site.url }}img/flag-es.png" alt=""></a>
-				</div>
-				<div class="search">
-					<h1>Pesquise no site</h1>
-					<input type="text" name="" value="" placeholder="" class="gf-icon-search">
-					<input type="submit" name="" value="&#xe619;">
-				</div>
+				</a>
 			</div>
-		</section>
-
-		<section id="logo">
-			<a href="index.html" class="container">
-				<img src="{{ site.url }}img/logo-sindeventos.png" alt="">
-			</a>
 		</section>
 
 		<section id="menu">

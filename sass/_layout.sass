@@ -45,31 +45,25 @@ body
 					text-transform: uppercase
 					line-height: 50px
 
-				.cidade
-					+grid(2, $gutter-width: 0)
-					border-right: 1px solid rgba($black, 0.05)
-					margin-right: -1px
+				.lang
+					position: absolute
+					top: 0
+					left: 0
+					height: 50px
+					text-align: center
 
-					& > a
-						font-size: 22px
-						font-weight: 700
-						display: block
-						position: relative
-						padding: 0 40px 0 20px
+					a
+						display: inline-block
+						padding: 0 10px
 
-
-					& > nav
-						background: $brancoCinza
-						+grid(3, $gutter-width: 0)
-						display: none
-						z-index: 99
-						position: absolute
-						a
-							display: block
-							border-top: 1px solid rgba($black, 0.05)
+						&:not(.active)
+							+desaturate
+							opacity: 0.5
 
 				nav
-					+grid(10, $gutter-width: 0)
+					+grid(11)
+					text-align: right
+					+grid-push(1)
 					a
 						padding: 0 20px
 						display: inline-block
@@ -77,60 +71,23 @@ body
 							background: $corPrincipal
 							color: $corPrincipalInverso
 
-			&#searchWrapper
+			&#logoWrapper
 				height: 90px
-				padding-top: 20px
+				padding: 20px 0
 				position: relative
 
 				.topBanner
-					+grid(8)
-					height: 90px
-					img
-						height: 90px
-
-				.lang, .search
-					+grid(4)
-
-				.lang
-					height: 13px
-					text-align: right
-					a
-						display: inline-block
-						margin-right: 10px
-
-						&:not(.active)
-							+desaturate
-							opacity: 0.5
-				.search
-					padding-top: 15px
-					position: relative
-					h1
-						font-size: 20px
-						margin-bottom: 5px
-						
-					input[type="text"]
-						background: $brancoCinza
-						border: none
-						width: 100%
-						margin: 0
-						padding-right: 50px
-
-					input[type="submit"]
-						margin: 0
-						position: absolute
-						bottom: 0
-						right: 0
-						+fontIcon
-						+border-radius(0 5px 5px 0)
-						height: 36px
-						padding: 0 10px
-						width: 40px
-
-			&#logo
-				padding: 20px 0
-				img
-					+grid(12)
 					display: block
+					float: right
+					width: 768px
+					height: 90px
+
+				#logo
+					display: block
+					float: left
+					width: 432px
+					height: 90px
+
 			&#menu
 				nav
 					+grid(12)
@@ -348,7 +305,7 @@ body
 						.caption
 							position: absolute
 							background: rgba($black, 0.7)
-							padding: 20px 20px 10px 20px
+							padding: 20px
 							bottom: 0
 							left: 0
 							right: 0
@@ -373,7 +330,7 @@ body
 								background: rgba($verde, 1)
 								+scale(1.4)
 
-						&:nth-of-type(1)
+						&:first-child
 							height: 498px
 							.caption
 								p
@@ -628,7 +585,7 @@ body
 // Content - Eventos
 // ------------------------------------------------------------------
 
-body 
+body:not(#home)
 	#contentWrapper
 		.wrapper 
 			.eventos
@@ -833,6 +790,9 @@ body
 	.accord-content
 		display: none
 		background: rgba($black, 0.03)
+
+		&.active
+			display: block
 		
 		form
 			padding: 2px 20px 60px 20px
@@ -845,7 +805,7 @@ body
 				width: 100%
 				margin: 0 0 10px 0
 				float: left
-			button
+			button.button
 				position: absolute
 				bottom: 0
 				left: 0
@@ -853,6 +813,7 @@ body
 				+border-radius(0 0 5px 5px)
 				height: 50px
 				margin: 0
+				width: 100%
 			.uf
 				width: 70px
 			.cidade
@@ -876,17 +837,65 @@ body
 				input
 					width: 240px
 
+			.ms-parent
+				width: 100%
+
+				& > button
+					width: 100%
+					height: 40px
+					font-size: 16px
+					padding: 8px 10px
+					position: relative
+					margin-top: 0
+					opacity: 1
+					+box-shadow(none)
+
+					span
+						text-transform: none
+						font-size: 16px
+						line-height: 36px
+						color: $cinzaEscuro
+						+font(400)
+						letter-spacing: 0
+						opacity: 1
+						padding-left: 10px
+
+					& > div
+						background: $branco url(../img/form-select.png) right center no-repeat
+						width: 36px
+						height: 36px
+
+						&.open
+							background: $branco url(../img/form-select-open.png) right center no-repeat
+				.ms-drop
+					overflow: visible !important
+					li
+						display: block
+						margin: 5px 0
+						height: 25px
+						+font
+						font-size: 14px
+						line-height: 25px
+						padding: 5px
+
+						&:hover
+							background: $brancoCinza
+
+						label
+							overflow: visible
+
+							input[type="checkbox"]
+								width: 25px
+								margin-right: 10px
+								margin-bottom: 0
+						
+
 		&.active
 			form
 				+animate(fadeInUp)
 		&.pesquisa
 			display: block
 
-#home #pesquisar.accordion
-	display: none
-
-#home #banner #pesquisar.accordion
-	display: block
 
 body:not(#home) #sidebar .widget
 	&#enquete, &#newsletter
@@ -1021,35 +1030,37 @@ body
 	.calendar
 		+clearfix
 		max-width: none
-		td
-			+font
-			line-height: 22px
-			&.active
-				&, &:hover
-					background: $verde
+		table
+			border: 0
+			td
+				+font
+				line-height: 22px
+				&.active
+					&, &:hover
+						background: $verde
 
-		thead tr:first-child th
-			font-size: 15px
-			font-weight: 700
-			text-transform: uppercase
+			thead tr:first-child th
+				font-size: 15px
+				font-weight: 700
+				text-transform: uppercase
 
-		th
-			+font
-			line-height: 30px
-			height: 30px
-			vertical-align: middle
-
-			.icon-arrow-right, .icon-arrow-left
-				background-position: center center
-				background-repeat: no-repeat
-				width: 30px
+			th
+				+font
+				line-height: 30px
 				height: 30px
-				display: block
+				vertical-align: middle
 
-			.icon-arrow-right
-				background-image: url(../img/calendar-next.png)
-			.icon-arrow-left
-				background-image: url(../img/calendar-prev.png)
+				.icon-arrow-right, .icon-arrow-left
+					background-position: center center
+					background-repeat: no-repeat
+					width: 30px
+					height: 30px
+					display: block
+
+				.icon-arrow-right
+					background-image: url(../img/calendar-next.png)
+				.icon-arrow-left
+					background-image: url(../img/calendar-prev.png)
 
 
 	.ranges
@@ -1080,6 +1091,7 @@ body
 		width: 50px
 		height: 50px
 		position: absolute
+		z-index: 99
 		top: 0
 		right: 0
 		font-size: 50px
@@ -1150,7 +1162,7 @@ body
 	background: $brancoCinza
 	margin-top: 20px
 	display: block
-	padding: 20px
+	padding: 20px 0
 	position: relative
 
 	h1
