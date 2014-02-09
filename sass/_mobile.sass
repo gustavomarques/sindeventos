@@ -1,8 +1,281 @@
 // ------------------------------------------------------------------
 // Mobile Phones
 // ------------------------------------------------------------------
-@media screen and (max-width: 480px)
+@media screen and (max-width: 600px)
 
+	body 
+		$ninesixty-gutter-width: 10px !default
+		$ninesixty-grid-width: 460px !default
+		$titleSize: 30px
+		h1
+			font-size: $titleSize
+
+		h2
+			font-size: $titleSize - 8
+
+		h3
+			font-size: $titleSize - 12
+
+		h4
+			font-size: $titleSize - 16
+
+		h5
+			font-size: $titleSize - 18
+
+		h6
+			font-size: $titleSize - 20
+
+		header
+			& > section#topMenu
+				.lang
+					left: auto
+					right: 0
+					top: 0
+					a
+						padding: 0 5px
+				nav
+					margin-right: 0
+					margin-left: 0
+					width: 480px
+					text-align: left
+					float: left
+
+					a
+						display: none
+
+					a.newsletter_link, a.login_link
+						display: inline-block
+
+			section#logoWrapper
+				height: 190px
+
+				.topBanner
+					float: none
+					margin: 0 auto
+					width: 460px
+
+				.logo
+					margin: 0 auto
+					float: none
+					margin-bottom: 20px
+
+			& > section#menu 
+				#nav
+					display: none
+
+				#navMobile
+					display: block
+					width: 460px
+
+					& > a
+						background: $brancoCinza
+						text-align: center
+						display: block
+						float: none
+						height: 60px
+						line-height: 60px
+						+font(900)
+						text-transform: uppercase
+						color: #4db6a2
+						+border-radius(5px)
+						font-size: 30px
+
+						img
+							margin: 5px 0 0 10px
+
+					nav
+						width: 460px
+						display: block
+						margin-top: 10px
+						margin: 0
+						background: $brancoCinza
+						+border-radius(5px)
+						float: none
+						padding-top: 5px
+						margin-top: -5px
+						display: none
+
+						a
+							display: block
+							padding: 20px
+							line-height: 120%
+							font-size: 18px
+							font-weight: 300
+							+bordinha2
+
+
+
+
+
+
+
+		#banner ul li a
+			right: 30px
+			left: 30px
+
+		.associe-se
+			font-size: 24px
+			line-height: 24px
+			span
+				font-size: 12px
+			&:hover
+				font-size: 14px
+				span
+					font-size: 16px
+
+		.container, .wrapper
+			width: 460px
+			display: block
+			margin-left: auto
+			margin-right: auto
+
+		#pageHeader a.associe-se 
+			width: 240px
+
+		#contentWrapper 
+			width: 480px
+			display: block
+			margin-left: auto
+			margin-right: auto
+			float: none
+
+			.wrapper
+				width: 460px
+				float: none
+				& > *
+					width: 440px
+					margin-left: 10px
+					margin-right: 10px
+				.eventos
+					& > h1
+						margin-bottom: 40px
+					& > a
+						top: 40px
+					& > div > a
+						width: 440px
+
+				.equipe
+					$ninesixty-gutter-width: 10px !default
+					$ninesixty-grid-width: 460px !default
+					+grid-system(12)
+
+					.greenTitle
+						+grid(12)
+						+greenTitle
+
+					li
+						+grid(4, $gutter-width: 0)
+				
+				.palavraPresidente > img
+					width: 100%
+					margin-right: 0
+					float: none
+
+				.listHorizontal, .sindicalizar
+					$ninesixty-gutter-width: 10px !default
+					$ninesixty-grid-width: 460px !default
+					+grid-system(12)
+
+					.greenTitle, & > p
+						+grid(12)
+
+					.greenTitle
+						+greenTitle
+
+					& > div
+						+grid(4, $gutter-width: 0)
+
+					a
+						+grid(12)
+						padding: 20px 10px
+
+						& > img
+							width: 200px
+
+				form
+					$ninesixty-gutter-width: 10px !default
+					$ninesixty-grid-width: 460px !default
+					+grid-system(12)
+
+					.greenTitle
+						+grid(12)
+
+					& > div
+						+grid(12)
+
+					& > input[type="submit"], & > input[type="button"], & > button
+						margin-right: 5px
+
+				.distanciaTable
+					$ninesixty-gutter-width: 10px !default
+					$ninesixty-grid-width: 460px !default
+					+grid-system(12)
+					form
+						& > div
+							+grid(6)
+
+			#sidebar
+				width: 440px
+				display: block
+				margin-left: auto
+				margin-right: auto
+				float: none
+				
+				.widget
+
+					h2
+						font-size: 16px
+
+				#pesquisar.accordion .accord-content form
+					padding-left: 10px
+					padding-right: 10px
+
+					select, input, .ms-parent
+						width: 100%
+					.ms-parent
+						margin-bottom: 0 !important
+					.uf
+						width: 70px
+					.cidade
+						width: 170px
+					.bairro
+						width: 160px
+					.periodo
+						label
+							width: 80px
+						input
+							width: 340px
+		.paginator a
+			margin-left: 7px !important
+			margin-right: 7px !important
+
+		footer > ul
+			margin-top: 20px
+			li
+				$ninesixty-gutter-width: 10px !default
+				$ninesixty-grid-width: 460px !default
+				width: 190px
+				margin-top: 30px
+
+
+		.modal
+			$ninesixty-gutter-width: 10px !default
+			$ninesixty-grid-width: 460px !default
+
+			h1, h2
+				+grid(12)
+
+			.grid_4
+				+grid(4)
+
+			input[type="button"]
+				width: 100%
+				margin-right: 0
+
+			&.newsletter
+				input[type="button"]
+					+grid(4)
+					float: right
 
 
 
@@ -12,7 +285,7 @@
 // ------------------------------------------------------------------
 // IPAD
 // ------------------------------------------------------------------
-@media screen and (min-width : 480px) and (max-width: 800px)
+@media screen and (min-width : 600px) and (max-width: 800px)
 
 	body 
 		$ninesixty-gutter-width: 10px !default
@@ -72,7 +345,7 @@
 					float: none
 					margin-bottom: 20px
 
-			& > section#menu nav
+			& > section#menu #nav
 				width: 760px
 				margin: 0
 
@@ -277,8 +550,9 @@
 					a
 						padding: 0 5px
 				nav
-					margin-right: 10px
+					float: right
 					width: 840px
+					margin: 0
 
 					a
 						padding: 0 10px
@@ -290,13 +564,16 @@
 
 				.logo
 					width: 270px
-			& > section#menu nav
+			& > section#menu #nav
 				width: 960px
 				margin: 0
 
 				a
 					font-size: 12px
 					padding: 0 7px
+
+		#banner ul li a
+			right: 100px
 
 		.container, .wrapper
 			width: 960px

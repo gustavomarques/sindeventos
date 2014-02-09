@@ -122,4 +122,9 @@ $('.multiple-select').multipleSelect({
 	multipleWidth: 130
 });
 
+$( "#navMobile > a" ).click(function() {
+  $( "#navMobile > nav" ).slideToggle( "slow", function() {
+
+  });
+});
 
