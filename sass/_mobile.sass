@@ -4,8 +4,8 @@
 @media screen and (max-width: 600px)
 
 	body 
-		$ninesixty-gutter-width: 10px !default
-		$ninesixty-grid-width: 460px !default
+		$ninesixty-gutter-width: 10px
+		$ninesixty-grid-width: 460px
 		$titleSize: 30px
 		h1
 			font-size: $titleSize
@@ -25,6 +25,11 @@
 		h6
 			font-size: $titleSize - 20
 
+		form
+			& > .grid_4, & > .grid_6
+				$ninesixty-gutter-width: 10px
+				$ninesixty-grid-width: 460px
+				width: 450px !important
 		header
 			& > section#topMenu
 				.lang
@@ -103,12 +108,6 @@
 							font-weight: 300
 							+bordinha2
 
-
-
-
-
-
-
 		#banner ul li a
 			right: 30px
 			left: 30px
@@ -155,8 +154,8 @@
 						width: 440px
 
 				.equipe
-					$ninesixty-gutter-width: 10px !default
-					$ninesixty-grid-width: 460px !default
+					$ninesixty-gutter-width: 10px
+					$ninesixty-grid-width: 460px
 					+grid-system(12)
 
 					.greenTitle
@@ -164,7 +163,7 @@
 						+greenTitle
 
 					li
-						+grid(4, $gutter-width: 0)
+						+grid(6, $gutter-width: 0)
 				
 				.palavraPresidente > img
 					width: 100%
@@ -172,8 +171,8 @@
 					float: none
 
 				.listHorizontal, .sindicalizar
-					$ninesixty-gutter-width: 10px !default
-					$ninesixty-grid-width: 460px !default
+					$ninesixty-gutter-width: 10px
+					$ninesixty-grid-width: 460px
 					+grid-system(12)
 
 					.greenTitle, & > p
@@ -183,7 +182,7 @@
 						+greenTitle
 
 					& > div
-						+grid(4, $gutter-width: 0)
+						+grid(12, $gutter-width: 0)
 
 					a
 						+grid(12)
@@ -193,8 +192,8 @@
 							width: 200px
 
 				form
-					$ninesixty-gutter-width: 10px !default
-					$ninesixty-grid-width: 460px !default
+					$ninesixty-gutter-width: 10px 
+					$ninesixty-grid-width: 460px 
 					+grid-system(12)
 
 					.greenTitle
@@ -207,8 +206,8 @@
 						margin-right: 5px
 
 				.distanciaTable
-					$ninesixty-gutter-width: 10px !default
-					$ninesixty-grid-width: 460px !default
+					$ninesixty-gutter-width: 10px 
+					$ninesixty-grid-width: 460px 
 					+grid-system(12)
 					form
 						& > div
@@ -252,15 +251,15 @@
 		footer > ul
 			margin-top: 20px
 			li
-				$ninesixty-gutter-width: 10px !default
-				$ninesixty-grid-width: 460px !default
+				$ninesixty-gutter-width: 10px
+				$ninesixty-grid-width: 460px
 				width: 190px
 				margin-top: 30px
 
 
 		.modal
-			$ninesixty-gutter-width: 10px !default
-			$ninesixty-grid-width: 460px !default
+			$ninesixty-gutter-width: 10px
+			$ninesixty-grid-width: 460px
 
 			h1, h2
 				+grid(12)
@@ -274,12 +273,29 @@
 
 			&.newsletter
 				input[type="button"]
-					+grid(4)
+					+grid(12)
 					float: right
 
 
+body:not(#home) #contentWrapper .wrapper
+	.paginator
+		padding-left: 40px
+		padding-right: 40px
+		a
+			width: 20px
+			height: 20px
+			margin: 0 6px
+			line-height: 20px
 
+			&.next, &.prev
+				width: 40px
+				margin: 0
 
+			&.next
+				right: -10px
+
+			&.prev
+				left: -10px
 
 
 // ------------------------------------------------------------------
@@ -288,8 +304,8 @@
 @media screen and (min-width : 600px) and (max-width: 800px)
 
 	body 
-		$ninesixty-gutter-width: 10px !default
-		$ninesixty-grid-width: 760px !default
+		$ninesixty-gutter-width: 10px 
+		$ninesixty-grid-width: 760px 
 
 		$titleSize: 30px
 		h1
@@ -521,8 +537,8 @@
 @media screen and (min-width : 800px) and (max-width: 1200px)
 
 	body 
-		$ninesixty-gutter-width: 10px !default
-		$ninesixty-grid-width: 960px !default
+		$ninesixty-gutter-width: 10px 
+		$ninesixty-grid-width: 960px 
 
 		$titleSize: 36px
 		h1
