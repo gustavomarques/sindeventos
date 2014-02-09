@@ -387,7 +387,7 @@
 		isopen: false,
 		placeholder: '',
 		selectAll: true,
-		selectAllText: 'Select all',
+		selectAllText: 'Selecionar todos',
 		multiple: false,
 		multipleWidth: 80,
 		filter: false,

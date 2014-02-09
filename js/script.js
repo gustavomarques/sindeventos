@@ -32,7 +32,7 @@ $(document).ready(function() {
 			$(this).next("div").slideUp("fast");
 		} else {
 			$(".accordion .accord-content").slideUp("fast");
-			$(this).next("div").addClass("active").slideToggle("fast");
+			$(this).next("div").addClass("active").slideDown("fast");
 		}
 	});
 
@@ -114,5 +114,12 @@ $('.custom-upload input[type=file]').change(function(){
     $(this).next().find('input').val($(this).val());
 });
 
+
+$('.multiple-select').multipleSelect({
+	placeholder: "Select com múltiplas opções",
+	width: 320,
+	multiple: true,
+	multipleWidth: 130
+});
 
 

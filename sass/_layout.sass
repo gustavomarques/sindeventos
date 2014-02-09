@@ -48,7 +48,7 @@ body
 				.lang
 					position: absolute
 					top: 0
-					left: 0
+					left: -10px
 					height: 50px
 					text-align: center
 
@@ -62,8 +62,8 @@ body
 
 				nav
 					+grid(11)
+					float: right
 					text-align: right
-					+grid-push(1)
 					a
 						padding: 0 20px
 						display: inline-block
@@ -76,16 +76,19 @@ body
 				padding: 20px 0
 				position: relative
 
+				img
+					width: 100%
+
 				.topBanner
 					display: block
 					float: right
 					width: 768px
 					height: 90px
 
-				#logo
+				.logo
 					display: block
 					float: left
-					width: 432px
+					width: 320px
 					height: 90px
 
 			&#menu
@@ -414,7 +417,7 @@ body
 						margin-bottom: -10px
 					h3
 						font-size: 24px
-						text-align: left
+						text-align: center
 						margin-bottom: 0
 						height: 60px
 						display: table-cell
@@ -423,6 +426,7 @@ body
 					h4
 						font-size: 13px
 						color: $verde
+						text-align: center
 
 					&:hover
 						background: $brancoCinza
@@ -764,6 +768,7 @@ body
 					margin-top: 40px
 					& > div
 						margin-bottom: 20px
+						+grid(6)
 
 
 
@@ -773,7 +778,7 @@ body
 // ------------------------------------------------------------------
 
 #pesquisar.accordion
-	width: 360px
+	width: 100%
 	display: block
 	min-height: 100px
 	background: $brancoCinza
@@ -954,6 +959,8 @@ body:not(#home) #sidebar .widget
 			a
 				margin-bottom: 10px
 				display: block
+				img
+					width: 100%
 
 		&#newsletter
 			form
@@ -1126,6 +1133,8 @@ body
 		margin-right: 20px
 		background: $brancoCinza
 		color: $cinzaEscuro
+		height: 38px
+		margin-top: 25px
 	div > a
 		font-size: 14px
 		text-align: right
